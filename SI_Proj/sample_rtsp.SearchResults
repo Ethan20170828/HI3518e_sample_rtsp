@@ -1,0 +1,402 @@
+---- g_rtspClients Matches (48 in 2 files) ----
+Sample_comm.h (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):extern RTSP_CLIENT g_rtspClients[MAX_RTSP_CLIENT];
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):RTSP_CLIENT g_rtspClients[MAX_RTSP_CLIENT];
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		   	server.sin_port=htons(g_rtspClients[0].rtpport[0]);          
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		   	server.sin_addr.s_addr=inet_addr(g_rtspClients[0].IP);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_IDLE;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].seqnum = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsvid = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsaud = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].rtpport[trackID] = rtpport;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].rtcpport = rtcpport;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].reqchn = atoi(urlPreSuffix);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				strcpy(g_rtspClients[pClient->index].urlPre,urlPreSuffix);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			PlayAnswer(cseq,pClient->socket,pClient->sessionid,g_rtspClients[pClient->index].urlPre,p);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_SENDING;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_IDLE;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].seqnum = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsvid = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsaud = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			if(g_rtspClients[i].status == RTSP_IDLE)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				memset(&g_rtspClients[i], 0, sizeof(RTSP_CLIENT));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].index = i;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].socket = s32CSocket;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].status = RTSP_CONNECTED ;//RTSP_SENDING;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].sessionid = nSessionId++;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				strcpy(g_rtspClients[i].IP, inet_ntoa(addrAccept.sin_addr));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				pthread_create(&threadIdlsn, NULL, RtspClientMsg, &g_rtspClients[i]);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			memset(&g_rtspClients[0],0,sizeof(RTSP_CLIENT));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[0].index = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[0].socket = s32CSocket;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[0].status = RTSP_CONNECTED ;//RTSP_SENDING;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[0].sessionid = nSessionId++;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			strcpy(g_rtspClients[0].IP,inet_ntoa(addrAccept.sin_addr));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			pthread_create(&threadIdlsn, NULL, RtspClientMsg, &g_rtspClients[0]);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[is].status!=RTSP_SENDING)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		int heart = g_rtspClients[is].seqnum % 10000;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	   	server.sin_port=htons(g_rtspClients[is].rtpport[0]);	// 这个是client那边的port     
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	   	server.sin_addr.s_addr=inet_addr(g_rtspClients[is].IP);	// 这个也是client那边的address
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			rtp_hdr->seq_no = htons(g_rtspClients[is].seqnum++); 
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            		g_rtspClients[is].tsvid = g_rtspClients[is].tsvid+timestamp_increse;            
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			rtp_hdr->timestamp = htonl(g_rtspClients[is].tsvid);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            g_rtspClients[is].tsvid = g_rtspClients[is].tsvid+timestamp_increse;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            rtp_hdr->timestamp=htonl(g_rtspClients[is].tsvid);            
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				rtp_hdr->seq_no = htons(g_rtspClients[is].seqnum++);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[i].status == RTSP_SENDING)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[j].status == RTSP_SENDING)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	memset(&g_rtspClients, 0, sizeof(RTSP_CLIENT)*MAX_RTSP_CLIENT);
+---- mppVersion Matches (3 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	MPP_VERSION_S mppVersion;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	HI_MPI_SYS_GetVersion(&mppVersion);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	printf("MPP Ver  %s\n", mppVersion.aVersion);
+---- User-Agent Matches (0 in 0 files) ----
+---- connect Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			connect(udpfd, (struct sockaddr *)&server, sizeof(server));
+---- pthread_detach Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_detach(pthread_self());		// 线程自己回收自己
+---- pthread_join Matches (32 in 9 files) ----
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):    (void)pthread_join(stIveMd.hIveMBThread, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    (void)pthread_join(g_pthSceneAutoNormal, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    (void)pthread_join(g_pthSceneAutoSpecial, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        (void)pthread_join(g_pthSceneAutoNormal, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        (void)pthread_join(g_pthSceneAutoSpecial, NULL);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAi->stAiPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAenc->stAencPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAdec->stAdPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAoCtl->stAoPid, 0);
+Sample_comm_isp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(gs_IspPid, 0);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(gs_VencPid, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_ive_md.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\ive\sample):    pthread_join(hIveThread,HI_NULL);
+Sample_ive_od.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\ive\sample):    pthread_join(hIveThread,HI_NULL);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVpssRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencOsdReverseThread, 0);
+---- pthread_cancel Matches (1 in 1 files) ----
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_cancel(pstAoCtl->stAoPid);
+---- pthread_setcancelstate Matches (0 in 0 files) ----
+---- pthread_setcanceltype Matches (0 in 0 files) ----
+---- pthread_cancel Matches (1 in 1 files) ----
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_cancel(pstAoCtl->stAoPid);
+---- pthread_exit Matches (0 in 0 files) ----
+---- pthread_self Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_detach(pthread_self());		// 线程自己回收自己，该子线程与主线程分离了；
+---- pthread_exit Matches (0 in 0 files) ----
+---- g_mutex Matches (2 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):pthread_mutex_t g_mutex;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_mutex_init(&g_mutex, NULL);
+---- RTSP_Session_State Matches (0 in 0 files) ----
+---- RTSP_Config Matches (0 in 0 files) ----
+---- >>>>> Matches (6 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s\n", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s\n", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s",buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s",buf);
+---- <<<<< Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		printf("<<<<<%s\n", p);
+---- --------------------------------------------H Matches (0 in 0 files) ----
+---- count Matches (5 in 2 files) ----
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        SAMPLE_PRT("input count invaild\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        SAMPLE_PRT("input count invaild\n");
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):int count=0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				count++;		// 用来记录当前环状buffer中几个有效数据；
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			count--;
+---- <<<<< Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		printf("<<<<<%s\n", p);
+---- >>>>> Matches (6 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s\n", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s\n", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s",buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s", buf);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			printf(">>>>>%s",buf);
+---- User-Agent: Matches (0 in 0 files) ----
+---- 192.168 Matches (0 in 0 files) ----
+---- LOCAL_HOST_IP Matches (0 in 0 files) ----
+---- connect Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			connect(udpfd, (struct sockaddr *)&server, sizeof(server));
+---- g_rtspClients Matches (41 in 2 files) ----
+Sample_comm.h (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):extern RTSP_CLIENT g_rtspClients[MAX_RTSP_CLIENT];
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):RTSP_CLIENT g_rtspClients[MAX_RTSP_CLIENT];
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		   	server.sin_port = htons(g_rtspClients[0].rtpport[0]);          
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		   	server.sin_addr.s_addr = inet_addr(g_rtspClients[0].IP);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_IDLE;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].seqnum = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsvid = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsaud = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].rtpport[trackID] = rtpport;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].rtcpport = rtcpport;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].reqchn = atoi(urlPreSuffix);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				strcpy(g_rtspClients[pClient->index].urlPre, urlPreSuffix);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			PlayAnswer(cseq, pClient->socket, pClient->sessionid, g_rtspClients[pClient->index].urlPre, p);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_SENDING;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].status = RTSP_IDLE;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].seqnum = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsvid = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			g_rtspClients[pClient->index].tsaud = 0;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			if(g_rtspClients[i].status == RTSP_IDLE)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				memset(&g_rtspClients[i], 0, sizeof(RTSP_CLIENT));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].index = i;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].socket = s32CSocket;		// 连接文件描述符
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].status = RTSP_CONNECTED;	//RTSP_SENDING;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				g_rtspClients[i].sessionid = nSessionId++;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				strcpy(g_rtspClients[i].IP, inet_ntoa(addrAccept.sin_addr));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				pthread_create(&threadIdlsn, NULL, RtspClientMsg, &g_rtspClients[i]);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[is].status! = RTSP_SENDING)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		int heart = g_rtspClients[is].seqnum % 10000;	// 累加到10000后，又重新开始了
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	   	server.sin_port = htons(g_rtspClients[is].rtpport[0]);	// 这个是client那边的port端口号  
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	   	server.sin_addr.s_addr = inet_addr(g_rtspClients[is].IP);	// 这个也是client那边的address地址
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			rtp_hdr->seq_no = htons(g_rtspClients[is].seqnum++); // 序列号，每发送一个RTP包增1
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            g_rtspClients[is].tsvid = g_rtspClients[is].tsvid + timestamp_increse;            
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			rtp_hdr->timestamp = htonl(g_rtspClients[is].tsvid);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            g_rtspClients[is].tsvid = g_rtspClients[is].tsvid + timestamp_increse;
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):            rtp_hdr->timestamp = htonl(g_rtspClients[is].tsvid); 
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				rtp_hdr->seq_no = htons(g_rtspClients[is].seqnum++);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[i].status == RTSP_SENDING)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		if(g_rtspClients[j].status == RTSP_SENDING)	// 这块是在playanswear后设置为发送模式的；
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	memset(&g_rtspClients, 0, sizeof(RTSP_CLIENT) * MAX_RTSP_CLIENT);
+---- pthread_detach Matches (1 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_detach(pthread_self());		// 线程自己回收自己，该子线程与主线程分离了；
+---- RtspClientMsg Matches (2 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):void * RtspClientMsg(void *pParam)
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				pthread_create(&threadIdlsn, NULL, RtspClientMsg, &g_rtspClients[i]);
+---- pthread_join Matches (32 in 9 files) ----
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):    (void)pthread_join(stIveMd.hIveMBThread, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    (void)pthread_join(g_pthSceneAutoNormal, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    (void)pthread_join(g_pthSceneAutoSpecial, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        (void)pthread_join(g_pthSceneAutoNormal, NULL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        (void)pthread_join(g_pthSceneAutoSpecial, NULL);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAi->stAiPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAenc->stAencPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAdec->stAdPid, 0);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(pstAoCtl->stAoPid, 0);
+Sample_comm_isp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(gs_IspPid, 0);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_join(gs_VencPid, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_hifb.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\hifb):        pthread_join(phifb0, 0);
+Sample_ive_md.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\ive\sample):    pthread_join(hIveThread,HI_NULL);
+Sample_ive_od.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\ive\sample):    pthread_join(hIveThread,HI_NULL);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVpssRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stVencThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):            pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencRgnThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVpssOsdReverseThread, 0);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        pthread_join(g_stVencOsdReverseThread, 0);
+---- pthread_cancel Matches (1 in 1 files) ----
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pthread_cancel(pstAoCtl->stAoPid);
+---- pthread_setcanceltype Matches (0 in 0 files) ----
+---- pthread_setcancelstate Matches (0 in 0 files) ----
+---- pthread_exit Matches (0 in 0 files) ----
+---- sem_post Matches (0 in 0 files) ----
+---- pthread_mutex_init Matches (2 in 1 files) ----
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_mutex_init(&g_sendmutex, NULL);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	pthread_mutex_init(&g_mutex, NULL);
+---- pthread_mutex_unlock Matches (38 in 2 files) ----
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);\
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);\
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);\
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);\
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):                    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):		pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):		pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):            pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):		pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):	pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        pthread_mutex_unlock(&g_stSceneautoLock);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    pthread_mutex_unlock(&g_stSceneautoLock);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):                pthread_mutex_unlock(&Rgnmutex_Tmp);
+---- pthread_cond_wait Matches (0 in 0 files) ----
+---- malloc Matches (67 in 8 files) ----
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):        CHECK_RET("pstIveMd->stImage 3 malloc fail\n", s32Ret);
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):	pstIveMd->stCCCalBuf.pu8VirAddr[0] = (HI_U8 *)malloc(pstIveMd->stCCCalBuf.u16Width);
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):    pstFrameInfo = (VIDEO_FRAME_INFO_S*)malloc(sizeof(VIDEO_FRAME_INFO_S) * 2);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniAE.pu32BitrateThresh = (HI_U32*)malloc((g_stINIPara.stIniAE.s32BitrateCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniAE.pstAERelatedBit = (SCENEAUTO_AERELATEDBIT_S*)malloc((g_stINIPara.stIniAE.s32BitrateCount) * sizeof(SCENEAUTO_AERELATEDBIT_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniAE.pu32AEExpDtoLThresh = (HI_U32*)malloc((g_stINIPara.stIniAE.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniAE.pu32AEExpLtoDThresh = (HI_U32*)malloc((g_stINIPara.stIniAE.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniAE.pstAERelatedExp = (SCENEAUTO_AERELATEDEXP_S*)malloc((g_stINIPara.stIniAE.s32ExpCount) * sizeof(SCENEAUTO_AERELATEDEXP_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniSharpen.pu32ExpThresh = (HI_U32 *)malloc((g_stINIPara.stIniSharpen.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniSharpen.pstSharpen = (SCENEAUTO_SHARPEN_S *)malloc((g_stINIPara.stIniSharpen.s32ExpCount) * sizeof(SCENEAUTO_SHARPEN_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniGamma.pu32ExpThreshLtoD = (HI_U32*)malloc((g_stINIPara.stIniGamma.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniGamma.pu32ExpThreshDtoL = (HI_U32*)malloc((g_stINIPara.stIniGamma.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniGamma.pstGamma = (SCENEAUTO_GAMMA_S*)malloc((g_stINIPara.stIniGamma.s32ExpCount) * sizeof(SCENEAUTO_GAMMA_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH264Venc.pu32BitrateThresh = (HI_U32*)malloc((g_stINIPara.stIniH264Venc.s32BitrateCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH264Venc.pstH264Venc = (SCENEAUTO_H264VENC_S*)malloc((g_stINIPara.stIniH264Venc.s32BitrateCount) * sizeof(SCENEAUTO_H264VENC_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH265Venc.stIniH265VencRcParam.pu32BitrateThresh = (HI_U32*)malloc((g_stINIPara.stIniH265Venc.stIniH265VencRcParam.s32BitrateCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH265Venc.stIniH265VencRcParam.pstH265VencRcParam = (SCENEAUTO_H265VENC_RCPARAM_S*)malloc((g_stINIPara.stIniH265Venc.stIniH265VencRcParam.s32BitrateCount) * sizeof(SCENEAUTO_H265VENC_RCPARAM_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pu32BitrateThresh = (HI_U32*)malloc((g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.s32BitrateCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pu32ExpThresh = (HI_U32*)malloc((g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pstH265VencFaceCfg = (SCENEAUTO_H265VENC_FACECFG_S*)malloc((g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.s32BitrateCount) * (g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.s32ExpCount) * sizeof(SCENEAUTO_H265VENC_FACECFG_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):   g_stINIPara.stIni3dnr.pu323DnrIsoThresh = (HI_U32 *)malloc((g_stINIPara.stIni3dnr.s323DnrIsoCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):   g_stINIPara.stIni3dnr.pst3dnrParam = (SCENEAUTO_INIPARAM_3DNRCFG_S *)malloc((g_stINIPara.stIni3dnr.s323DnrIsoCount) * sizeof(SCENEAUTO_INIPARAM_3DNRCFG_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stFastDynamic.pstRouteNode = (SCENEAUTO_ROUTE_NODE_S*)malloc((g_stINIPara.stFastDynamic.s32TotalNum) * sizeof (SCENEAUTO_ROUTE_NODE_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stNormalDynamic.pstRouteNode = (SCENEAUTO_ROUTE_NODE_S*)malloc((g_stINIPara.stFastDynamic.s32TotalNum) * sizeof (SCENEAUTO_ROUTE_NODE_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):     g_stINIPara.stHLC.pu323DnrIsoThresh = (HI_U32 *)malloc((g_stINIPara.stHLC.s323DnrIsoCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):     g_stINIPara.stHLC.pst3dnrParam = (SCENEAUTO_INIPARAM_3DNRCFG_S *)malloc((g_stINIPara.stHLC.s323DnrIsoCount) * sizeof(SCENEAUTO_INIPARAM_3DNRCFG_S));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pu32ExpThreshLtoH = (HI_U32*)malloc((g_stINIPara.stIR.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pu32ExpThreshHtoL = (HI_U32*)malloc((g_stINIPara.stIR.s32ExpCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pu8ExpCompensation = (HI_U8*)malloc((g_stINIPara.stIR.s32ExpCount) * sizeof(HI_U8));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pu8MaxHistOffset = (HI_U8*)malloc((g_stINIPara.stIR.s32ExpCount) * sizeof(HI_U8));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pu323DnrIsoThresh = (HI_U32 *)malloc((g_stINIPara.stIR.s323DnrIsoCount) * sizeof(HI_U32));
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):    g_stINIPara.stIR.pst3dnrParam = (SCENEAUTO_INIPARAM_3DNRCFG_S *)malloc((g_stINIPara.stIR.s323DnrIsoCount) * sizeof(SCENEAUTO_INIPARAM_3DNRCFG_S));
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pOrigBMPBuf = (HI_U8 *)malloc(h*stride);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("not enough memory to malloc!\n");
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pOrigBMPBuf = (HI_U8 *)malloc(h*stride);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("not enough memory to malloc!\n");
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pOrigBMPBuf = (HI_U8 *)malloc(h*stride);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("not enough memory to malloc!\n");
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pu8AudioStream = (HI_U8*)malloc(sizeof(HI_U8)*MAX_AUDIO_STREAM_LEN);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("%s: malloc failed!\n", __FUNCTION__);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        pszFile = (HI_CHAR*)malloc(stStat.st_size);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):            printf("memory malloc fail!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):	HI_CHAR* cDstBuf = (HI_CHAR*)malloc(endpos - startpos);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):		printf("memory malloc fail!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):	HI_CHAR* cDstBuf = (HI_CHAR*)malloc(endpos - startpos);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):		printf("memory malloc fail!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):            stStream.pstPack = (VENC_PACK_S*)malloc(sizeof(VENC_PACK_S) * stStat.u32CurPacks);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                SAMPLE_PRT("malloc memory failed!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                    stStream.pstPack = (VENC_PACK_S*)malloc(sizeof(VENC_PACK_S) * stStat.u32CurPacks);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        SAMPLE_PRT("malloc stream pack failed!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                    stStream.pstPack = (VENC_PACK_S*)malloc(sizeof(VENC_PACK_S) * stStat.u32CurPacks);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        SAMPLE_PRT("malloc stream pack failed!\n");
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pTmpU = malloc( s32Size ); ptu = pTmpU;
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pTmpV = malloc( s32Size ); ptv = pTmpV;
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("malloc buf failed\n");
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pTmpU = malloc( s32Size );
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("Func: %s() Line[%d], malloc failed\n", __FUNCTION__, __LINE__);
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    pTmpV = malloc( s32Size );
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        printf("Func: %s() Line[%d], malloc failed\n", __FUNCTION__, __LINE__);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):    pstBitmap->pData = malloc(u32BytePerPix * (bmpInfo.bmiHeader.biWidth) * (bmpInfo.bmiHeader.biHeight));
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        printf("malloc osd memroy err!\n");        
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        printf("malloc osd memroy err!\n");        
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):    stStream.pstPack      = (VENC_PACK_S *) malloc( sizeof(VENC_PACK_S)*stChnStat.u32CurPacks);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	char * LocalIP = malloc(20);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):  char* copy = malloc(len);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				RTPbuf_s *p = (RTPbuf_s *)malloc(sizeof(RTPbuf_s));
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):				p->buf = (char *)malloc(lens);
+---- free Matches (72 in 8 files) ----
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):        free(pstIveMd->stCCCalBuf.pu8VirAddr[0]);
+Hi_sceneauto_adpt.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\adapt\hi3518e):    free(pstFrameInfo);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniAE.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniAE.pu32AEExpDtoLThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniAE.pu32AEExpLtoDThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniAE.pstAERelatedBit);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniAE.pstAERelatedExp);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniDemosaic.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniDemosaic.pu32ExpThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniDemosaic.pstDemosaic);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniSharpen.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniSharpen.pstSharpen);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniDP.pu32ExpThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniDP.pstDPAttr);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniGamma.pu32ExpThreshDtoL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniGamma.pu32ExpThreshLtoD);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniGamma.pstGamma);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH264Venc.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH264Venc.pstH264Venc);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stFastDynamic.pstRouteNode);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stNormalDynamic.pstRouteNode);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pu32ExpThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH265Venc.stIniH265VencFaceCfg.pstH265VencFaceCfg);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH265Venc.stIniH265VencRcParam.pu32BitrateThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIniH265Venc.stIniH265VencRcParam.pstH265VencRcParam);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pu32ExpThreshHtoL);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pu32ExpThreshLtoH);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pu8ExpCompensation);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pu8MaxHistOffset);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pu323DnrIsoThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIR.pst3dnrParam);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stHLC.pu323DnrIsoThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stHLC.pst3dnrParam);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIni3dnr.pu323DnrIsoThresh);
+Hi_srdk_sceneauto.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\scene_auto\src\common):        free(g_stINIPara.stIni3dnr.pst3dnrParam);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free(pOrigBMPBuf);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free(pOrigBMPBuf);
+Loadbmp.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free(pOrigBMPBuf);
+Sample_comm_audio.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free(pu8AudioStream);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):            free(pszFile);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        free(pszFile);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):        free(pszFile);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free(pszFile);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):		free(DstBuf);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):            free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                    free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):	                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                        free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):                    free(stStream.pstPack);
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free( ptu );
+Sample_comm_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free( ptv );
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free( ptu );
+Sample_comm_vi.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\common):    free( ptv );
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):    	free(pstBitmap->pData);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        free(stStream.pstPack);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):        free(stStream.pstPack);
+Sample_region.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\region):					free(stBitmap.pData);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		free(localip);			// GetLocalIP函数中malloc了；
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			free(destinationAddressStr);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):	free(field);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		free(localip);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):		free(localip);
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			free(p->buf);			// 将申请的内存都释放掉
+Sample_venc.c (c:\winshare\learning_for_project\a0201-hi3518ev200\sample_rtsp\venc):			free(p);				// 将申请的内存都释放掉
